@@ -208,7 +208,7 @@ func init() {
 	// Initialize the CLI app and start Geth
 	app.Action = geth
 	app.HideVersion = true // we have a command to print the version
-	app.Copyright = "Copyright 2013-2022 The go-ethereum Authors"
+	app.Copyright = "Copyright 2013-2022 The go-ethereum Authors And SCOL"
 	app.Commands = []*cli.Command{
 		// See chaincmd.go:
 		initCommand,
@@ -275,23 +275,23 @@ func prepare(ctx *cli.Context) {
 	// If we're running a known preset, log it for convenience.
 	switch {
 	case ctx.IsSet(utils.RopstenFlag.Name):
-		log.Info("Starting Geth on Ropsten testnet...")
+		log.Info("Starting Pad on Ropsten testnet...")
 
 	case ctx.IsSet(utils.RinkebyFlag.Name):
-		log.Info("Starting Geth on Rinkeby testnet...")
+		log.Info("Starting Pad on Rinkeby testnet...")
 
 	case ctx.IsSet(utils.GoerliFlag.Name):
-		log.Info("Starting Geth on Görli testnet...")
+		log.Info("Starting Pad on Görli testnet...")
 
 	case ctx.IsSet(utils.SepoliaFlag.Name):
-		log.Info("Starting Geth on Sepolia testnet...")
+		log.Info("Starting Pad on Sepolia testnet...")
 
 	case ctx.IsSet(utils.KilnFlag.Name):
-		log.Info("Starting Geth on Kiln testnet...")
+		log.Info("Starting Pad on Kiln testnet...")
 
 	case ctx.IsSet(utils.DeveloperFlag.Name):
-		log.Info("Starting Geth in ephemeral dev mode...")
-		log.Warn(`You are running Geth in --dev mode. Please note the following:
+		log.Info("Starting Pad in ephemeral dev mode...")
+		log.Warn(`You are running Pad in --dev mode. Please note the following:
 
   1. This mode is only intended for fast, iterative development without assumptions on
      security or persistence.
@@ -308,7 +308,7 @@ func prepare(ctx *cli.Context) {
 `)
 
 	case !ctx.IsSet(utils.NetworkIdFlag.Name):
-		log.Info("Starting Geth on Ethereum mainnet...")
+		log.Info("Starting Pad on Ethereum mainnet...")
 	}
 	// If we're a full node on mainnet without --cache specified, bump default cache allowance
 	if ctx.String(utils.SyncModeFlag.Name) != "light" && !ctx.IsSet(utils.CacheFlag.Name) && !ctx.IsSet(utils.NetworkIdFlag.Name) {
