@@ -48,7 +48,7 @@ import (
 )
 
 const (
-	clientIdentifier = "geth" // Client identifier to advertise over the network
+	clientIdentifier = "pad" // Client identifier to advertise over the network
 )
 
 var (
@@ -56,7 +56,7 @@ var (
 	gitCommit = ""
 	gitDate   = ""
 	// The app that holds all commands and flags.
-	app = flags.NewApp(gitCommit, gitDate, "the go-ethereum command line interface")
+	app = flags.NewApp(gitCommit, gitDate, "the pad command line interface")
 	// flags that configure the node
 	nodeFlags = flags.Merge([]cli.Flag{
 		utils.IdentityFlag,
