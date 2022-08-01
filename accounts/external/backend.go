@@ -163,10 +163,9 @@ func (api *ExternalSigner) SignData(account accounts.Account, mimeType string, d
 		return nil, err
 	}
 	// If V is on 27/28-form, convert to 0/1 for Clique
-	if (mimeType == accounts.MimetypeClique || mimeType == accounts.MimetypeSenatus) && (res[64] == 27 || res[64] == 28) {
-		res[64] -= 27 // Transform V from 27/28 to 0/1 for Clique/Senatus use
+	if mimeType == accounts.MimetypeClique && (res[64] == 27 || res[64] == 28) {
+		res[64] -= 27 // Transform V from 27/28 to 0/1 for Clique use
 	}
-	return res, nil
 }
 
 func (api *ExternalSigner) SignText(account accounts.Account, text []byte) ([]byte, error) {
