@@ -99,7 +99,7 @@ var (
 		},
 		{
 			BinaryName:  "pad",
-			Description: "PAD CLI client.",
+			Description: "Scol Pad CLI client.",
 		},
 		{
 			BinaryName:  "puppeth",
